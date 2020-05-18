@@ -1,0 +1,64 @@
+/* stylelint-disable selector-max-universal, selector-max-type */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: 100%;
+  font-size: $size-font-html;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: $size-font-base;
+  font-weight: normal;
+  color: $color-text;
+  text-size-adjust: 100%;
+  font-family: $font-family-base;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $line-height-base;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: $font-family-base;
+  font-size: inherit;
+  color: inherit;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+input,
+button,
+select {
+  margin: 0;
+}
+
+input,
+button {
+  outline: 0;
+}
+
+select,
+button {
+  cursor: pointer;
+}
