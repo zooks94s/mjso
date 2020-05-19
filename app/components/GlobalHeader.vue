@@ -27,4 +27,14 @@
     height: 100vh;
   }
 }
+
+@media (--sp) {
+  .global-header {
+    &_brand {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
 </style>

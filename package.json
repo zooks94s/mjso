@@ -12,6 +12,10 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
+  "browserslist": [
+    "last 1 version",
+    "ie >= 11"
+  ],
   "prettier": {
     "semi": false,
     "trailingComma": "all",
@@ -20,6 +24,8 @@
   },
   "dependencies": {
     "nuxt": "^2.11.0",
+    "postcss": "^7.0.30",
+    "postcss-custom-media": "^7.0.8",
     "ress": "^2.0.4"
   },
   "devDependencies": {

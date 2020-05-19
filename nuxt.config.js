@@ -52,6 +52,22 @@ export default {
    ** Build configuration
    */
   build: {
+    postcss: {
+      plugins: {
+        'postcss-custom-media': {
+          importFrom: {
+            customMedia: {
+              '--sp': '(max-width: 768px)',
+            },
+          },
+        },
+      },
+      preset: {
+        autoprefixer: {
+          grid: true,
+        },
+      },
+    },
     /*
      ** You can extend webpack config here
      */
