@@ -21,4 +21,14 @@ footer.global-footer
     text-align: center;
   }
 }
+
+@media (--sp) {
+  .global-footer {
+    padding: 40px 0 20px;
+
+    &_inner {
+      padding: 0;
+    }
+  }
+}
 </style>

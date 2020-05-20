@@ -25,4 +25,10 @@ export default {
     width: 100%;
   }
 }
+
+@media (--sp) {
+  .app-layout {
+    padding-top: 50px;
+  }
+}
 </style>
