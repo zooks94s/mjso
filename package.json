@@ -23,10 +23,12 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@nuxtjs/svg-sprite": "^0.4.10",
     "nuxt": "^2.11.0",
     "postcss": "^7.0.30",
     "postcss-custom-media": "^7.0.8",
-    "ress": "^2.0.4"
+    "ress": "^2.0.4",
+    "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

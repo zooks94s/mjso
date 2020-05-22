@@ -8,13 +8,15 @@
           img.global-header_logo(src="@/assets/img/logo-mjso_vertical.svg")
       .global-header_scroll
         span.global-header_scrolltext SCROLL
+          svg-icon.global-header_scrollarrow(name="arrow_downward")
     .global-header_nav
       button.global-header_menu(type="button")
         span.global-header_menuicon
         p.global-header_menutext MENU
       .global-header_contact
         a.global-header_telephone(href="tel:03-3388-0022") tel. 03-3388-0022
-        a.global-header_mail(href="mailto:user@example.com") mail
+        a.global-header_mail(href="mailto:user@example.com")
+          svg-icon.global-header_mailicon(name="mail")
 </template>
 
 <style lang="scss" scoped>
@@ -53,6 +55,10 @@
     @include textTracking(150);
   }
 
+  &_scrollarrow {
+    height: 28px;
+  }
+
   &_menu {
     display: block;
   }
@@ -88,11 +94,18 @@
 
   &_mail {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
     background-color: $color-text;
     border-radius: 50%;
     margin-top: 26px;
+    color: $color-white;
+  }
+
+  &_mailicon {
+    width: 26px;
   }
 }
 

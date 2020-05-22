@@ -35,7 +35,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/svg4everybody.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -43,7 +43,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/svg-sprite'],
 
   styleResources: {
     scss: '@/assets/css/abstract/all.scss',
