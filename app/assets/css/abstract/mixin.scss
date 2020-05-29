@@ -1,3 +1,11 @@
 @mixin textTracking($size) {
   letter-spacing: ($size / 1000) * 1em;
 }
+
+@mixin gridAreaChildren($number, $prefix: 'g') {
+  @for $i from 1 through $number {
+    > :nth-child(#{$i}) {
+      grid-area: #{$prefix}#{$i};
+    }
+  }
+}

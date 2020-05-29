@@ -1,21 +1,158 @@
 <template lang="pug">
 footer.global-footer
-  .global-footer_inner
-    p footer
+  .global-footer_heading
+    nuxt-link.global-footer_brand(to="/")
+      img.global-footer_brandlogo(src="@/assets/img/logo-mjso.svg" alt="宮川司法書士事務所")
+      p.global-footer_brandauthor 代表司法書士 宮川祐輔（ミヤカワ ユウスケ）
 
-    small.global-footer_copyright Copyright &copy; 宮川司法書士事務所
+  .global-footer_line
+    img.global-footer_lineimage(src="@/assets/img/img-footer_line.png")
+
+  .global-footer_body
+    dl.global-footer_block
+      dt.global-footer_title ACCESS
+      dd.global-footer_address
+          p.global-footer_addresstext 〒164-0001#[br]東京都中野区中野5-67-7 プラザ中野704
+      dd.global-footer_map
+        SlidelineButton(
+          href="https://goo.gl/maps/MNRZsT2xMgbTb7KbA"
+          target="_blank"
+        )
+          | GOOGLE MAP
+      dd.global-footer_contact
+        a.global-footer_telephone.-anchor-sp(href="tel:03-3388-0022" data-prefix="tel.") 03-3388-0022
+        .global-footer_telephone(data-prefix="fax.") 03-3388-0066
+    .global-footer_block
+      .global-footer_title MENU
+      GlobalMenu.global-footer_menu
+
+    .global-footer_block.-flex-end
+      SnsButton(name="Facebook" href="#")
+
+    .global-footer_copyright
+      small Copyright &copy; 宮川司法書士事務所
 </template>
+
+<script>
+import SlidelineButton from '@/components/SlidelineButton'
+import GlobalMenu from '@/components/GlobalMenu'
+import SnsButton from '@/components/SnsButton'
+
+export default {
+  components: {
+    SlidelineButton,
+    GlobalMenu,
+    SnsButton,
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .global-footer {
   background-color: $color-background;
-  padding: 0 $header-width;
+  padding: 60px 0 50px;
 
-  &_inner {
-    padding: 60px 70px 50px;
+  &_heading,
+  &_body {
+    margin: 0 calcPerSize(140px, 1280px);
+  }
+
+  &_brand {
+    color: $color-text;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: $transition-hover;
+    transition-property: opacity;
+
+    &:hover {
+      opacity: $opacity-hover;
+    }
+  }
+
+  &_brandlogo {
+    width: 380px;
+  }
+
+  &_brandauthor {
+    margin-left: 38px;
+  }
+
+  &_line {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+  }
+
+  &_lineimage {
+    width: 100%;
+    min-width: 1280px;
+  }
+
+  &_body {
+    display: grid;
+    grid-template-columns: calcPerSize(600px, 1000px) calcPerSize(260px, 1000px) calcPerSize(140px, 1000px);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'footer1 footer2 footer3'
+      'footer4 footer4 footer4';
+    @include gridAreaChildren(4, 'footer');
+  }
+
+  &_block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &_block.-flex-end {
+    justify-content: flex-end;
+  }
+
+  &_title {
+    font-size: 1.2rem;
+    color: $color-magenta;
+    @include textTracking(150);
+    margin-bottom: 20px;
+  }
+
+  &_map {
+    font-size: 1.3rem;
+  }
+
+  &_contact {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &_telephone {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+
+    & + & {
+      margin-left: 20px;
+    }
+
+    &::before {
+      font-size: 1.4rem;
+      content: attr(data-prefix);
+      margin-right: 8px;
+    }
+  }
+
+  &_telephone.-anchor-sp {
+    text-decoration: none;
+    color: $color-text;
+    pointer-events: none;
+    cursor: default;
   }
 
   &_copyright {
+    margin-top: 50px;
     width: 100%;
     display: inline-block;
     text-align: center;
@@ -25,10 +162,6 @@ footer.global-footer
 @media (--sp) {
   .global-footer {
     padding: 40px 0 20px;
-
-    &_inner {
-      padding: 0;
-    }
   }
 }
 </style>

@@ -3,8 +3,7 @@
     GlobalHeader
     .app-layout_content
       nuxt
-      .app-layout_bottom
-        GlobalFooter
+      GlobalFooter
 </template>
 
 <script>

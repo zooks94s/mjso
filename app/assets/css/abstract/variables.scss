@@ -14,9 +14,22 @@ $color-text: #333333;
 $color-background: #f7f5f1;
 $color-white: #ffffff;
 $color-black: #000000;
+$color-magenta: #e73656;
+$color-dark-blue: #001c58;
+$color-link-active: #81817f;
 
 /* --------------------------
   size
 -------------------------- */
 $header-width: 140px;
 $content-width: 1000px;
+
+/* --------------------------
+  opacity
+-------------------------- */
+$opacity-hover: 0.6;
+
+/* --------------------------
+  transitions
+-------------------------- */
+$transition-hover: 0.3s ease-in-out;

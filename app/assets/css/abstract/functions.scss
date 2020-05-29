@@ -1,0 +1,3 @@
+@function calcPerSize($size, $parentSize) {
+  @return ($size / $parentSize) * 100%;
+}
