@@ -117,25 +117,25 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: $color-white;
 
-    &_brand,
-    &_nav {
+    &_brand {
+      display: block;
       position: static;
       width: auto;
       height: auto;
       padding: 0;
     }
 
-    &_brand {
-      display: block;
-    }
-
     &_brandanchor {
       width: 220px;
     }
 
-    &_scroll {
+    &_scroll,
+    &_contact {
+      display: none;
+    }
+
+    &_nav {
       display: none;
     }
   }

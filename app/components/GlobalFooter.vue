@@ -92,8 +92,12 @@ export default {
   }
 
   &_body {
+    $grid-address: calcPerSize(600px, 1000px);
+    $grid-menu: calcPerSize(260px, 1000px);
+    $grid-sns: calcPerSize(140px, 1000px);
+
     display: grid;
-    grid-template-columns: calcPerSize(600px, 1000px) calcPerSize(260px, 1000px) calcPerSize(140px, 1000px);
+    grid-template-columns: $grid-address $grid-menu $grid-sns;
     grid-template-rows: auto;
     grid-template-areas:
       'footer1 footer2 footer3'
@@ -161,7 +165,70 @@ export default {
 
 @media (--sp) {
   .global-footer {
-    padding: 40px 0 20px;
+    padding: 40px $padding-side-sp 20px;
+
+    &_heading,
+    &_body {
+      margin: 0;
+    }
+
+    &_brand {
+      display: block;
+    }
+
+    &_brandlogo {
+      width: 240px;
+    }
+
+    &_brandauthor {
+      font-size: 1.2rem;
+      margin-top: 12px;
+      margin-left: 0;
+    }
+
+    &_line {
+      height: 60px;
+      margin: 0 #{$padding-side-sp * -1};
+    }
+
+    &_lineimage {
+      min-width: initial;
+    }
+
+    &_body {
+      grid-template-columns: 100%;
+      grid-template-rows: 150px repeat(3, auto);
+      grid-template-areas:
+        'footer2'
+        'footer1'
+        'footer3'
+        'footer4';
+      grid-gap: 30px;
+    }
+
+    &_title {
+      margin-bottom: 12px;
+    }
+
+    &_contact {
+      display: block;
+      margin-top: 12px;
+    }
+
+    &_telephone {
+      & + & {
+        margin-top: 12px;
+        margin-left: 0;
+      }
+    }
+
+    &_telephone.-anchor-sp {
+      pointer-events: auto;
+    }
+
+    &_copyright {
+      margin-top: 0;
+    }
   }
 }
 </style>
