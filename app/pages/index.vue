@@ -24,6 +24,28 @@ export default {
   components: {
     Logo,
   },
+
+  head() {
+    return {
+      title:
+        '宮川司法書士事務所 | 不動産登記・法人登記でお悩みの方はご相談ください',
+      titleTemplate: '',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '宮川司法書士事務所は、個人や法人に関わらず、登記や相続などに関するお悩みに耳を傾け、丁寧にサポートいたします。',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            '登記,不動産登記,法人登記,会社設立登記,商業登記,企業法務,遺産相続,相続,遺言,成年後見,名義変更,抵当権抹消,相談,司法書士,東京,中野,東京都中野区,宮川司法書士事務所',
+        },
+      ],
+    }
+  },
 }
 </script>
 
