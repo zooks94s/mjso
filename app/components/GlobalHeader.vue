@@ -7,8 +7,7 @@
           source(srcset="@/assets/img/logo-mjso_vertical.svg")
           img.global-header_logo(src="@/assets/img/logo-mjso_vertical.svg")
       .global-header_scroll
-        span.global-header_scrolltext SCROLL
-          svg-icon.global-header_scrollarrow(name="arrow_downward")
+        ScrollingArrow(is-vertical=true)
     .global-header_nav
       button.global-header_menu(type="button")
         span.global-header_menuicon
@@ -18,6 +17,16 @@
         a.global-header_mail(href="mailto:user@example.com")
           svg-icon.global-header_mailicon(name="mail")
 </template>
+
+<script>
+import ScrollingArrow from '@/components/ScrollingArrow'
+
+export default {
+  components: {
+    ScrollingArrow,
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .global-header {
@@ -48,15 +57,8 @@
     height: auto;
   }
 
-  &_scrolltext {
+  &_scroll {
     font-size: 1.3rem;
-    color: $color-black;
-    writing-mode: vertical-rl;
-    @include textTracking(150);
-  }
-
-  &_scrollarrow {
-    height: 28px;
   }
 
   &_menu {
