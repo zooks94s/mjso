@@ -62,7 +62,7 @@ export default {
         'postcss-custom-media': {
           importFrom: {
             customMedia: {
-              '--sp': '(max-width: 768px)',
+              '--sp': 'screen and (max-width: 768px)',
             },
           },
         },
