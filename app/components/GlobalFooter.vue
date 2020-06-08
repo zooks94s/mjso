@@ -24,7 +24,7 @@ footer.global-footer
         .global-footer_telephone(data-prefix="fax.") 03-3388-0066
     .global-footer_block
       .global-footer_title MENU
-      GlobalMenu.global-footer_menu
+      GlobalContentsNav.global-footer_menu
 
     .global-footer_block.-flex-end
       SnsButton(name="Facebook" href="#")
@@ -35,13 +35,13 @@ footer.global-footer
 
 <script>
 import SlidelineButton from '@/components/SlidelineButton'
-import GlobalMenu from '@/components/GlobalMenu'
+import GlobalContentsNav from '@/components/GlobalContentsNav'
 import SnsButton from '@/components/SnsButton'
 
 export default {
   components: {
     SlidelineButton,
-    GlobalMenu,
+    GlobalContentsNav,
     SnsButton,
   },
 }
@@ -54,7 +54,7 @@ export default {
 
   &_heading,
   &_body {
-    margin: 0 calcPerSize(140px, 1280px);
+    margin: 0 calcRelativeWith(140px, 1280px);
   }
 
   &_brand {
@@ -62,12 +62,7 @@ export default {
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: $transition-hover;
-    transition-property: opacity;
-
-    &:hover {
-      opacity: $opacity-hover;
-    }
+    @include hoverOpacity;
   }
 
   &_brandlogo {
@@ -92,9 +87,9 @@ export default {
   }
 
   &_body {
-    $grid-address: calcPerSize(600px, 1000px);
-    $grid-menu: calcPerSize(260px, 1000px);
-    $grid-sns: calcPerSize(140px, 1000px);
+    $grid-address: calcRelativeWith(600px, 1000px);
+    $grid-menu: calcRelativeWith(260px, 1000px);
+    $grid-sns: calcRelativeWith(140px, 1000px);
 
     display: grid;
     grid-template-columns: $grid-address $grid-menu $grid-sns;

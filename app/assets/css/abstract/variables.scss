@@ -9,6 +9,11 @@ $font-family-serif: 'Noto Serif JP';
 $line-height-base: 1.5;
 
 /* --------------------------
+  z-index
+-------------------------- */
+$z-index: menu, header;
+
+/* --------------------------
   color
 -------------------------- */
 $color-text: #333333;
@@ -23,6 +28,7 @@ $color-link-active: #81817f;
   size
 -------------------------- */
 $header-width: 140px;
+$wrapper-width: 1280px;
 $content-width: 1000px;
 
 /* --------------------------

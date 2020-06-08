@@ -9,21 +9,52 @@
       .global-header_scroll
         ScrollingArrow(is-vertical=true)
     .global-header_nav
-      button.global-header_menu(type="button")
-        span.global-header_menuicon
-        p.global-header_menutext MENU
+      button.global-header_hamburger(
+        type="button"
+        @click="toggleMenu"
+      )
+        span.global-header_hamburgericon
+        p.global-header_hamburgertext {{ toggleMenuText }}
       .global-header_contact
-        a.global-header_telephone(href="tel:03-3388-0022") tel. 03-3388-0022
+        a.global-header_telephone(
+          :class="{ '-hidden': isShowMenu }"
+          href="tel:03-3388-0022"
+        ) tel. 03-3388-0022
         a.global-header_mail(href="mailto:user@example.com")
           svg-icon.global-header_mailicon(name="mail")
+    transition(name="menu")
+      GlobalMenu.global-header_menu(
+        v-show="isShowMenu"
+        :is-active="isShowMenu"
+      )
 </template>
 
 <script>
 import ScrollingArrow from '@/components/ScrollingArrow'
+import GlobalMenu from '@/components/GlobalMenu'
 
 export default {
   components: {
     ScrollingArrow,
+    GlobalMenu,
+  },
+
+  data() {
+    return {
+      isShowMenu: false,
+    }
+  },
+
+  computed: {
+    toggleMenuText() {
+      return this.isShowMenu ? 'CLOSE' : 'MENU'
+    },
+  },
+
+  methods: {
+    toggleMenu() {
+      this.isShowMenu = !this.isShowMenu
+    },
   },
 }
 </script>
@@ -49,6 +80,7 @@ export default {
 
   &_nav {
     right: 0;
+    @include z-index(header);
   }
 
   &_brandanchor {
@@ -61,18 +93,18 @@ export default {
     font-size: 1.3rem;
   }
 
-  &_menu {
+  &_hamburger {
     display: block;
   }
 
-  &_menuicon {
+  &_hamburgericon {
     display: block;
     width: 20px;
     height: 14px;
     background-color: $color-black;
   }
 
-  &_menutext {
+  &_hamburgertext {
     margin-top: 15px;
     font-size: 1.3rem;
     color: $color-black;
@@ -94,6 +126,10 @@ export default {
     text-decoration: none;
   }
 
+  &_telephone.-hidden {
+    display: none;
+  }
+
   &_mail {
     display: flex;
     justify-content: center;
@@ -108,6 +144,15 @@ export default {
 
   &_mailicon {
     width: 26px;
+  }
+
+  &_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    @include z-index(menu);
   }
 }
 
@@ -140,6 +185,18 @@ export default {
     &_nav {
       display: none;
     }
+  }
+}
+
+.menu {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
   }
 }
 </style>

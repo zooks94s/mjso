@@ -35,12 +35,7 @@ export default {
   text-decoration: none;
   display: flex;
   align-items: center;
-  transition: $transition-hover;
-  transition-property: opacity;
-
-  &:hover {
-    opacity: $opacity-hover;
-  }
+  @include hoverOpacity;
 
   &_icon {
     width: 30px;
