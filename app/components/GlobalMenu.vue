@@ -8,17 +8,17 @@
       .global-menu_nav
         GlobalContentsNav
       .global-menu_sns
-        SnsButton(name="Facebook" href="#")
+        SnsButtonFacebook
 </template>
 
 <script>
 import GlobalContentsNav from '@/components/GlobalContentsNav'
-import SnsButton from '@/components/SnsButton'
+import SnsButtonFacebook from '@/components/SnsButtonFacebook'
 
 export default {
   components: {
     GlobalContentsNav,
-    SnsButton,
+    SnsButtonFacebook,
   },
 
   props: {

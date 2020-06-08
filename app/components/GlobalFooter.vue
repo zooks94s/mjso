@@ -27,7 +27,7 @@ footer.global-footer
       GlobalContentsNav.global-footer_menu
 
     .global-footer_block.-flex-end
-      SnsButton(name="Facebook" href="#")
+      SnsButtonFacebook
 
     .global-footer_copyright
       small Copyright &copy; 宮川司法書士事務所
@@ -36,13 +36,13 @@ footer.global-footer
 <script>
 import SlidelineButton from '@/components/SlidelineButton'
 import GlobalContentsNav from '@/components/GlobalContentsNav'
-import SnsButton from '@/components/SnsButton'
+import SnsButtonFacebook from '@/components/SnsButtonFacebook'
 
 export default {
   components: {
     SlidelineButton,
     GlobalContentsNav,
-    SnsButton,
+    SnsButtonFacebook,
   },
 }
 </script>
