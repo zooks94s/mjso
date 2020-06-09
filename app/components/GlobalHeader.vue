@@ -15,13 +15,8 @@
       )
         span.global-header_hamburgericon
         p.global-header_hamburgertext {{ toggleMenuText }}
-      .global-header_contact
-        a.global-header_telephone(
-          :class="{ '-hidden': isShowMenu }"
-          href="tel:03-3388-0022"
-        ) tel. 03-3388-0022
-        a.global-header_mail(href="mailto:user@example.com")
-          svg-icon.global-header_mailicon(name="mail")
+      a.global-header_mail(href="mailto:user@example.com")
+        svg-icon.global-header_mailicon(name="mail")
     transition(name="menu")
       GlobalMenu.global-header_menu(
         v-show="isShowMenu"
@@ -112,24 +107,6 @@ export default {
     @include textTracking(150);
   }
 
-  &_contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &_telephone {
-    font-size: 1.4rem;
-    color: $color-black;
-    writing-mode: vertical-rl;
-    @include textTracking(150);
-    text-decoration: none;
-  }
-
-  &_telephone.-hidden {
-    display: none;
-  }
-
   &_mail {
     display: flex;
     justify-content: center;
@@ -138,7 +115,6 @@ export default {
     height: 50px;
     background-color: $color-text;
     border-radius: 50%;
-    margin-top: 26px;
     color: $color-white;
   }
 
