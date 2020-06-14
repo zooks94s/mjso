@@ -113,13 +113,26 @@ export default {
     align-items: center;
     width: 50px;
     height: 50px;
+    border: 1px solid $color-text;
     background-color: $color-text;
     border-radius: 50%;
     color: $color-white;
+    transition: $transition-hover;
+    transition-property: background-color;
+
+    &:hover {
+      background-color: $color-white;
+    }
   }
 
   &_mailicon {
     width: 26px;
+    transition: $transition-hover;
+    transition-property: fill;
+  }
+
+  &_mail:hover &_mailicon {
+    fill: $color-text;
   }
 
   &_menu {
