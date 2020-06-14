@@ -9,12 +9,7 @@
       .global-header_scroll
         ScrollingArrow(is-vertical=true)
     .global-header_nav
-      button.global-header_hamburger(
-        type="button"
-        @click="toggleMenu"
-      )
-        span.global-header_hamburgericon
-        p.global-header_hamburgertext {{ toggleMenuText }}
+      GlobalHeaderHamburger(@click-hamburgar="toggleMenu")
       a.global-header_mail(href="mailto:user@example.com" target="_blank")
         svg-icon.global-header_mailicon(name="mail")
     transition(name="menu")
@@ -27,23 +22,19 @@
 <script>
 import ScrollingArrow from '@/components/ScrollingArrow'
 import GlobalMenu from '@/components/GlobalMenu'
+import GlobalHeaderHamburger from '@/components/GlobalHeaderHamburger'
 
 export default {
   components: {
     ScrollingArrow,
     GlobalMenu,
+    GlobalHeaderHamburger,
   },
 
   data() {
     return {
       isShowMenu: false,
     }
-  },
-
-  computed: {
-    toggleMenuText() {
-      return this.isShowMenu ? 'CLOSE' : 'MENU'
-    },
   },
 
   methods: {
@@ -86,25 +77,6 @@ export default {
 
   &_scroll {
     font-size: 1.3rem;
-  }
-
-  &_hamburger {
-    display: block;
-  }
-
-  &_hamburgericon {
-    display: block;
-    width: 20px;
-    height: 14px;
-    background-color: $color-black;
-  }
-
-  &_hamburgertext {
-    margin-top: 15px;
-    font-size: 1.3rem;
-    color: $color-black;
-    writing-mode: vertical-rl;
-    @include textTracking(150);
   }
 
   &_mail {
