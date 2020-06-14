@@ -49,12 +49,12 @@ export default {
 }
 
 .global-header-hamburger {
+  @include hoverIconScale;
+
   &_button {
     display: block;
     width: 25px;
     height: 25px;
-
-    @include hoverIconScale;
   }
 
   &_icons {
