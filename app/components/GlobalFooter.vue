@@ -20,8 +20,7 @@ footer.global-footer
         )
           | GOOGLE MAP
       dd.global-footer_contact
-        a.global-footer_telephone.-anchor-sp(href="tel:03-3388-0022" data-prefix="tel.") 03-3388-0022
-        .global-footer_telephone(data-prefix="fax.") 03-3388-0066
+        CallNumber
     .global-footer_block
       .global-footer_title MENU
       GlobalContentsNav.global-footer_menu
@@ -37,12 +36,14 @@ footer.global-footer
 import SlidelineButton from '@/components/SlidelineButton'
 import GlobalContentsNav from '@/components/GlobalContentsNav'
 import SnsButtonFacebook from '@/components/SnsButtonFacebook'
+import CallNumber from '@/components/CallNumber'
 
 export default {
   components: {
     SlidelineButton,
     GlobalContentsNav,
     SnsButtonFacebook,
+    CallNumber,
   },
 }
 </script>
@@ -127,29 +128,6 @@ export default {
     margin-top: 30px;
   }
 
-  &_telephone {
-    display: inline-block;
-    font-size: 2rem;
-    font-weight: 700;
-
-    & + & {
-      margin-left: 20px;
-    }
-
-    &::before {
-      font-size: 1.4rem;
-      content: attr(data-prefix);
-      margin-right: 8px;
-    }
-  }
-
-  &_telephone.-anchor-sp {
-    text-decoration: none;
-    color: $color-text;
-    pointer-events: none;
-    cursor: default;
-  }
-
   &_copyright {
     margin-top: 50px;
     width: 100%;
@@ -208,17 +186,6 @@ export default {
     &_contact {
       display: block;
       margin-top: 12px;
-    }
-
-    &_telephone {
-      & + & {
-        margin-top: 12px;
-        margin-left: 0;
-      }
-    }
-
-    &_telephone.-anchor-sp {
-      pointer-events: auto;
     }
 
     &_copyright {

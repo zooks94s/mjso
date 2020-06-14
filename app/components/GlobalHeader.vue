@@ -2,7 +2,7 @@
   header.global-header
     .global-header_brand
       nuxt-link.global-header_brandanchor(to="/")
-        picture
+        picture.global-header_picture
           source(media="(max-width: 768px)" srcset="@/assets/img/logo-mjso.svg")
           source(srcset="@/assets/img/logo-mjso_vertical.svg")
           img.global-header_logo(src="@/assets/img/logo-mjso_vertical.svg")
@@ -15,7 +15,7 @@
       )
         span.global-header_hamburgericon
         p.global-header_hamburgertext {{ toggleMenuText }}
-      a.global-header_mail(href="mailto:user@example.com")
+      a.global-header_mail(href="mailto:user@example.com" target="_blank")
         svg-icon.global-header_mailicon(name="mail")
     transition(name="menu")
       GlobalMenu.global-header_menu(
@@ -140,6 +140,16 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include z-index(header);
+
+    &_scroll,
+    &_hamburgertext,
+    &_mail {
+      display: none;
+    }
 
     &_brand {
       display: block;
@@ -151,15 +161,30 @@ export default {
 
     &_brandanchor {
       width: 220px;
+      height: 24px;
     }
 
-    &_scroll,
-    &_contact {
-      display: none;
+    &_picture {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
     &_nav {
-      display: none;
+      position: static;
+      padding: 0;
+      width: auto;
+      height: auto;
+    }
+
+    &_hamburger {
+      width: 30px;
+      height: 30px;
+    }
+
+    &_hamburgericon {
+      width: 100%;
+      height: 100%;
     }
   }
 }

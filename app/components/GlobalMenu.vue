@@ -5,20 +5,30 @@
       nuxt-link.global-menu_anchor(to="/")
         img.global-menu_logo(src="@/assets/img/logo-typography.svg" alt="宮川司法書士事務所")
     .global-menu_contents
+      nuxt-link.global-menu_home(to="/")
+        img(src="@/assets/img/logo-typography_vertical.svg" alt="宮川司法書士事務所")
       .global-menu_nav
         GlobalContentsNav
       .global-menu_sns
         SnsButtonFacebook
+      .global-menu_telephone
+        CallNumber
+      .global-menu_contact
+        GlobalMenuContact
 </template>
 
 <script>
 import GlobalContentsNav from '@/components/GlobalContentsNav'
 import SnsButtonFacebook from '@/components/SnsButtonFacebook'
+import GlobalMenuContact from '@/components/GlobalMenuContact'
+import CallNumber from '@/components/CallNumber'
 
 export default {
   components: {
     GlobalContentsNav,
     SnsButtonFacebook,
+    GlobalMenuContact,
+    CallNumber,
   },
 
   props: {
@@ -82,6 +92,48 @@ export default {
 
   &_sns {
     margin-top: 40px;
+  }
+
+  &_home,
+  &_telephone,
+  &_contact {
+    display: none;
+  }
+}
+
+@media (--sp) {
+  .global-menu {
+    padding: 50px (85px / 2) 40px;
+    background-color: $color-background;
+    background-image: url(~assets/img/bg-circle.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: calcRelativeWith(350px, 750px, 'vw') auto;
+
+    &_visual {
+      display: none;
+    }
+
+    &_contents {
+      width: 100%;
+      padding-left: 0;
+      position: relative;
+    }
+
+    &_home {
+      display: block;
+      width: 25px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &_nav,
+    &_telephone,
+    &_contact {
+      display: block;
+      margin-top: 40px;
+    }
   }
 }
 </style>

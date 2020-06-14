@@ -1,7 +1,3 @@
-@function calcPerSize($size, $parentSize) {
-  @return ($size / $parentSize) * 100%;
-}
-
 @function calcRelativeWith($width, $parentWidth, $unit: '%') {
   $relativeWidth: ($width / $parentWidth) * 100;
 
