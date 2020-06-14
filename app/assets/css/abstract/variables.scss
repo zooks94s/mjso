@@ -5,6 +5,44 @@ $size-font-base: 1.6rem;
 $font-family-base: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3',
   'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, '游ゴシック', 'Yu Gothic',
   YuGothic, sans-serif;
+$font-family-serif: 'Noto Serif JP';
 $line-height-base: 1.5;
 
+/* --------------------------
+  z-index
+-------------------------- */
+$z-index: menu, header;
+
+/* --------------------------
+  color
+-------------------------- */
 $color-text: #333333;
+$color-background: #f7f5f1;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-magenta: #e73656;
+$color-dark-blue: #001c58;
+$color-link-active: #81817f;
+
+/* --------------------------
+  size
+-------------------------- */
+$header-width: 140px;
+$wrapper-width: 1280px;
+$content-width: 1000px;
+
+/* --------------------------
+  opacity
+-------------------------- */
+$opacity-hover: 0.6;
+
+/* --------------------------
+  transitions
+-------------------------- */
+$transition-hover: 0.3s ease-in-out;
+$transition-hamburger: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+/* --------------------------
+  padding
+-------------------------- */
+$padding-side-sp: 35px;

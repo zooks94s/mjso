@@ -1,0 +1,10 @@
+@function calcRelativeWith($width, $parentWidth, $unit: '%') {
+  $relativeWidth: ($width / $parentWidth) * 100;
+
+  @if $unit == '%' {
+    @return $relativeWidth * 1%;
+  }
+  @else if $unit == 'vw' {
+    @return $relativeWidth * 1vw;
+  }
+}

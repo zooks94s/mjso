@@ -5,7 +5,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s | 宮川司法書士事務所',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,7 +20,12 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese',
+          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&display=swap',
       },
     ],
   },
@@ -35,7 +40,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/svg4everybody.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -43,11 +48,31 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/svg-sprite'],
+
+  styleResources: {
+    scss: '@/assets/css/abstract/all.scss',
+  },
   /*
    ** Build configuration
    */
   build: {
+    postcss: {
+      plugins: {
+        'postcss-custom-media': {
+          importFrom: {
+            customMedia: {
+              '--sp': 'screen and (max-width: 768px)',
+            },
+          },
+        },
+      },
+      preset: {
+        autoprefixer: {
+          grid: true,
+        },
+      },
+    },
     /*
      ** You can extend webpack config here
      */
