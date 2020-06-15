@@ -1,30 +1,14 @@
 <template lang="pug">
-  .container
-    div
-      logo
-      h1.title mjso
-
-      h2.subtitle My supreme Nuxt.js project
-
-      .links
-        a.button--green(
-          href="https://nuxtjs.org/"
-          target="_blank"
-        ) Documentation
-        a.button--grey(
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-        ) GitHub
+  .page-index
+    .page-index_background
+    .page-index_layout
+      .page-index_heading
+        h1.page-index_title 繊細でかけがえのない#[br]お客様の権利を守るために。
+        p.page-index_description 安心して相談できる司法書士として、耳を傾けます。
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo,
-  },
-
   head() {
     return {
       title:
@@ -49,35 +33,46 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss" scoped>
+.page-index {
+  &_background {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(~assets/img/index/bg-visual.svg);
+    background-repeat: no-repeat;
+    background-position: center calc(100% - 136px);
+    background-size: calcRelativeWith($content-width, $wrapper-width);
+  }
 
-.title {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  &_layout {
+    position: relative;
+    padding: 0 $header-width;
+  }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+  &_heading {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    font-family: $font-family-serif;
+    @include textTracking(50);
+    padding: 190px calcRelativeWith(60px, $content-width) 60px;
+  }
 
-.links {
-  padding-top: 15px;
+  &_title {
+    font-size: 4.6rem;
+    font-weight: 500;
+    line-height: (90 / 46);
+  }
+
+  &_description {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 50px;
+  }
 }
 </style>
