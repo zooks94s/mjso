@@ -55,7 +55,7 @@ export default {
 
   &_heading,
   &_body {
-    margin: 0 calcRelativeWith(140px, 1280px);
+    margin: 0 calcRelativeWith($header-width, $wrapper-width);
   }
 
   &_brand {

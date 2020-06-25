@@ -3,7 +3,7 @@
     :is="tagType"
     :to="to"
     :target="target"
-    :href="href"
+    :href="hrefPath"
   )
     .slide-line-button_body
       span.slide-line-button_text
@@ -35,6 +35,10 @@ export default {
       if (this.to) return 'nuxt-link'
       if (this.href) return 'a'
       return 'div'
+    },
+
+    hrefPath() {
+      return this.to ? this.to : this.href
     },
   },
 }
@@ -88,6 +92,7 @@ export default {
 
   &_text {
     color: $color-dark-blue;
+    font-weight: $weight-medium;
     @include textTracking(50);
   }
 

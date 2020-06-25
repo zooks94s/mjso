@@ -9,7 +9,7 @@
   &_anchor {
     display: inline-block;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: $weight-bold;
     color: $color-text;
 
     & + & {

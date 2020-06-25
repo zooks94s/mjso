@@ -62,6 +62,7 @@ export default {
 
   &_brand {
     left: 0;
+    @include z-index(brand);
   }
 
   &_nav {

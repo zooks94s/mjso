@@ -1,14 +1,36 @@
 <template lang="pug">
-  .page-index
-    .page-index_background
-    .page-index_layout
-      .page-index_heading
-        h1.page-index_title 繊細でかけがえのない#[br]お客様の権利を守るために。
-        p.page-index_description 安心して相談できる司法書士として、耳を傾けます。
+  .index-page
+    .index-page_background
+    header.index-page_heading
+      h1.index-page_title 繊細でかけがえのない#[br]お客様の権利を守るために。
+      p.index-page_description 安心して相談できる司法書士として、耳を傾けます。
+    article.index-page_article
+      IndexSection(category="ABOUT US")
+        IndexSectionAboutUs
+      IndexSection(category="SERVICE")
+        IndexSectionService
+      IndexSection(category="PRICE")
+        IndexSectionPrice
+      .index-page_bottom
+        ContactButton
 </template>
 
 <script>
+import ContactButton from '@/components/ContactButton'
+import IndexSection from '@/components/IndexSection'
+import IndexSectionAboutUs from '@/components/IndexSectionAboutUs'
+import IndexSectionService from '@/components/IndexSectionService'
+import IndexSectionPrice from '@/components/IndexSectionPrice'
+
 export default {
+  components: {
+    ContactButton,
+    IndexSection,
+    IndexSectionAboutUs,
+    IndexSectionService,
+    IndexSectionPrice,
+  },
+
   head() {
     return {
       title:
@@ -34,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-index {
+.index-page {
   &_background {
     position: fixed;
     z-index: -1;
@@ -48,9 +70,8 @@ export default {
     background-size: calcRelativeWith($content-width, $wrapper-width);
   }
 
-  &_layout {
-    position: relative;
-    padding: 0 $header-width;
+  &_article {
+    background-color: $color-white;
   }
 
   &_heading {
@@ -60,19 +81,23 @@ export default {
     height: 100vh;
     font-family: $font-family-serif;
     @include textTracking(50);
-    padding: 190px calcRelativeWith(60px, $content-width) 60px;
+    padding: 190px calcRelativeWith($header-width, $wrapper-width) 60px;
   }
 
   &_title {
     font-size: 4.6rem;
-    font-weight: 500;
+    font-weight: $weight-medium;
     line-height: (90 / 46);
   }
 
   &_description {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: $weight-medium;
     margin-top: 50px;
+  }
+
+  &_bottom {
+    padding-bottom: 70px;
   }
 }
 </style>
