@@ -42,4 +42,21 @@ export default {
     color: $color-text;
   }
 }
+
+@media (--sp) {
+  .index-section-heading {
+    display: block;
+    padding-bottom: 0;
+
+    &_category {
+      display: block;
+      padding-right: 0;
+      margin-bottom: 15px;
+    }
+
+    &_title {
+      font-size: 1.8rem;
+    }
+  }
+}
 </style>

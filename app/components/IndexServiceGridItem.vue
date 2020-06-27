@@ -68,4 +68,26 @@ export default {
     line-height: 2;
   }
 }
+
+@media (--sp) {
+  .index-service-grid-item {
+    padding: 15px;
+
+    &_heading {
+      &::after {
+        height: 1px;
+      }
+    }
+
+    &_icon {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &_title {
+      font-size: 1.6rem;
+    }
+  }
+}
 </style>

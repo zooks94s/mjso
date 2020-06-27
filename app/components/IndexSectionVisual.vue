@@ -72,4 +72,25 @@ export default {
     padding-right: calcRelativeWith($header-width, $wrapper-width);
   }
 }
+
+@media (--sp) {
+  .index-section-visual {
+    &_inner {
+      display: block;
+    }
+
+    &_content {
+      padding: 0;
+    }
+
+    &_vertical,
+    &_picture {
+      display: none;
+    }
+
+    &.-inverse &_content {
+      padding: 0;
+    }
+  }
+}
 </style>

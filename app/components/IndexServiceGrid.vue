@@ -53,4 +53,18 @@ export default {
   grid-template-areas: 'g1 g2 g3';
   @include gridAreaChildren(3);
 }
+
+@media (--sp) {
+  .index-service-grid {
+    margin-right: ($padding-side-sp - 20) * -1;
+    margin-left: ($padding-side-sp - 20) * -1;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 15px;
+    grid-template-areas:
+      'g1'
+      'g2'
+      'g3';
+  }
+}
 </style>

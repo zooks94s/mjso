@@ -9,12 +9,19 @@
         category="PRICE"
         title="料金について"
       )
-      p.index-section-price_text お客様に安心してご依頼いただけるよう、#[br]
-        | 司法書士報酬アンケートに基づいた#[br]
-        | 平均以下の料金での報酬基準を#[br]
-        | 実現しています。
-      p.index-section-price_text まずは無料の電話相談をご利用ください。#[br]
-        | 適正なお見積もりをご案内します。
+      IndexSectionVisualSp(
+        :src="imageSrc"
+        :is-inverse="true"
+      )
+        | リーズナブルな料金で#[br]サービスをご提供します。
+      p.index-section-price_text.
+        お客様に安心してご依頼いただけるよう、#[br._break-pc]
+        司法書士報酬アンケートに基づいた#[br._break-pc]
+        平均以下の料金での報酬基準を#[br._break-pc]
+        実現しています。
+      p.index-section-price_text.
+        まずは無料の電話相談をご利用ください。#[br]
+        適正なお見積もりをご案内します。
       .index-section-price_bottom
         SlidelineButton(to="/price") MORE ABOUT PRICE
     template(v-slot:vertical)
@@ -25,12 +32,14 @@
 import SlidelineButton from '@/components/SlidelineButton'
 import IndexSectionHeading from '@/components/IndexSectionHeading'
 import IndexSectionVisual from '@/components/IndexSectionVisual'
+import IndexSectionVisualSp from '@/components/IndexSectionVisualSp'
 
 export default {
   components: {
     SlidelineButton,
     IndexSectionHeading,
     IndexSectionVisual,
+    IndexSectionVisualSp,
   },
 
   data() {
@@ -56,6 +65,20 @@ export default {
 
   &_bottom {
     margin-top: 30px;
+  }
+}
+
+@media (--sp) {
+  .index-section-price {
+    padding: 50px $padding-side-sp;
+
+    &_text {
+      font-size: 1.4rem;
+    }
+
+    &_bottom {
+      text-align: right;
+    }
   }
 }
 </style>

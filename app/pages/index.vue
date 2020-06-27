@@ -2,8 +2,10 @@
   .index-page
     .index-page_background
     header.index-page_heading
-      h1.index-page_title 繊細でかけがえのない#[br]お客様の権利を守るために。
-      p.index-page_description 安心して相談できる司法書士として、耳を傾けます。
+      h1.index-page_title 繊細でかけがえのない#[br]お客様の権利を#[br._break-sp]守るために。
+      p.index-page_description 安心して相談できる#[br._break-sp]司法書士として、耳を傾けます。
+      .index-page_scrolling
+        ScrollingArrow
     article.index-page_article
       IndexSection(category="ABOUT US")
         IndexSectionAboutUs
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+import ScrollingArrow from '@/components/ScrollingArrow'
 import ContactButton from '@/components/ContactButton'
 import IndexSection from '@/components/IndexSection'
 import IndexSectionAboutUs from '@/components/IndexSectionAboutUs'
@@ -24,6 +27,7 @@ import IndexSectionPrice from '@/components/IndexSectionPrice'
 
 export default {
   components: {
+    ScrollingArrow,
     ContactButton,
     IndexSection,
     IndexSectionAboutUs,
@@ -79,25 +83,64 @@ export default {
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    font-family: $font-family-serif;
-    @include textTracking(50);
     padding: 190px calcRelativeWith($header-width, $wrapper-width) 60px;
   }
 
   &_title {
     font-size: 4.6rem;
     font-weight: $weight-medium;
+    font-family: $font-family-serif;
+    @include textTracking(50);
     line-height: (90 / 46);
   }
 
   &_description {
     font-size: 2rem;
     font-weight: $weight-medium;
+    font-family: $font-family-serif;
+    @include textTracking(50);
     margin-top: 50px;
+  }
+
+  &_scrolling {
+    display: none;
   }
 
   &_bottom {
     padding-bottom: 70px;
+  }
+}
+
+@media (--sp) {
+  .index-page {
+    &_background {
+      background-position: {
+        x: 105%;
+      }
+      background-size: 138% auto;
+    }
+
+    &_heading {
+      position: relative;
+      padding: 75px 35px;
+    }
+
+    &_title {
+      font-size: 2.5rem;
+    }
+
+    &_description {
+      font-size: 1.6rem;
+    }
+
+    &_scrolling {
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: 20px;
+      left: 0;
+      transform: translateY(-100%);
+    }
   }
 }
 </style>

@@ -40,4 +40,12 @@ export default {
     text-align: right;
   }
 }
+
+@media (--sp) {
+  .index-section {
+    &_category {
+      display: none;
+    }
+  }
+}
 </style>
