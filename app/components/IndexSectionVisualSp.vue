@@ -55,7 +55,7 @@ export default {
 
     &_vertical {
       writing-mode: vertical-rl;
-      font-size: 2.1rem;
+      font-size: 2rem;
       font-family: $font-family-serif;
       line-height: (50 / 30);
       @include textTracking(60);

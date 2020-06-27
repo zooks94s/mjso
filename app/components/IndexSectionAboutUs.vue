@@ -98,7 +98,7 @@ export default {
     }
 
     &_title {
-      font-size: 2.1rem;
+      font-size: 2rem;
       padding: 70px;
     }
 

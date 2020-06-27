@@ -34,9 +34,10 @@
   .call-number {
     &_anchor {
       width: 100%;
+      font-size: 1.8rem;
 
       & + & {
-        margin-top: 12px;
+        margin-top: 5px;
         margin-left: 0;
       }
     }

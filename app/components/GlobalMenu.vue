@@ -108,7 +108,7 @@ export default {
     background-image: url(~assets/img/bg-circle.png);
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-size: calcRelativeWith(350px, 750px, 'vw') auto;
+    background-size: calcRelativeWith(320px, 750px, 'vw') auto;
 
     &_visual {
       display: none;
