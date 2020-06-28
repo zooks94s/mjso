@@ -35,7 +35,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/svg4everybody.js', ssr: false }],
+  plugins: [
+    { src: '~plugins/svg4everybody.js', ssr: false },
+    { src: '~plugins/object-fit-images.js', ssr: false },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -61,6 +64,7 @@ export default {
             },
           },
         },
+        'postcss-object-fit-images': {},
       },
       preset: {
         autoprefixer: {
