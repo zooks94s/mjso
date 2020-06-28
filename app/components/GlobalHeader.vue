@@ -81,6 +81,7 @@ export default {
   }
 
   &_mail {
+    flex: none;
     display: flex;
     justify-content: center;
     align-items: center;
