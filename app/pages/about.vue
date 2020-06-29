@@ -1,15 +1,15 @@
 <template lang="pug">
-  .about-page
-    .about-page_bottom
-      ContactButton
+  LocalPage
+    .about-page
+      h1 アバウト
 </template>
 
 <script>
-import ContactButton from '@/components/ContactButton'
+import LocalPage from '@/components/LocalPage'
 
 export default {
   components: {
-    ContactButton,
+    LocalPage,
   },
 
   head() {

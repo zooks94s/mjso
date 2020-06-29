@@ -1,15 +1,15 @@
 <template lang="pug">
-  .privacy-page
-    .privacy-page_bottom
-      ContactButton
+  LocalPage
+    .privacy-page
+      h1 プライバシー
 </template>
 
 <script>
-import ContactButton from '@/components/ContactButton'
+import LocalPage from '@/components/LocalPage'
 
 export default {
   components: {
-    ContactButton,
+    LocalPage,
   },
 
   head() {
