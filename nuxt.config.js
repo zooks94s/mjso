@@ -1,5 +1,4 @@
 export default {
-  mode: 'spa',
   srcDir: 'app/',
   /*
    ** Headers of the page
