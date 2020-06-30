@@ -1,15 +1,20 @@
 <template lang="pug">
   LocalPage
     .privacy-page
-      h1 プライバシー
+      ContentsTitle(
+        category="PRIVACY POLICY"
+        title="プライバシーポリシー"
+      )
 </template>
 
 <script>
 import LocalPage from '@/components/LocalPage'
+import ContentsTitle from '@/components/ContentsTitle'
 
 export default {
   components: {
     LocalPage,
+    ContentsTitle,
   },
 
   head() {

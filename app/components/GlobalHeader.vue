@@ -9,7 +9,10 @@
       .global-header_scroll
         ScrollingArrow(is-vertical=true)
     .global-header_nav
-      GlobalHeaderHamburger(@click-hamburgar="toggleMenu")
+      GlobalHeaderHamburger(
+        @click-hamburgar="toggleMenu"
+        ref="hamburger"
+      )
       a.global-header_mail(href="mailto:user@example.com" target="_blank")
         svg-icon.global-header_mailicon(name="mail")
     transition(name="menu")
@@ -35,6 +38,15 @@ export default {
     return {
       isShowMenu: false,
     }
+  },
+
+  watch: {
+    $route(to, from) {
+      if (to.path !== from.path) {
+        this.isShowMenu = false
+        this.$refs.hamburger.isActive = false
+      }
+    },
   },
 
   methods: {

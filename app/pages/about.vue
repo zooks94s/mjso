@@ -1,15 +1,20 @@
 <template lang="pug">
   LocalPage
     .about-page
-      h1 アバウト
+      ContentsTitle(
+        category="ABOUT US"
+        title="私たちについて"
+      )
 </template>
 
 <script>
 import LocalPage from '@/components/LocalPage'
+import ContentsTitle from '@/components/ContentsTitle'
 
 export default {
   components: {
     LocalPage,
+    ContentsTitle,
   },
 
   head() {
