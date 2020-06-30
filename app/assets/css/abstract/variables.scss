@@ -11,7 +11,7 @@ $line-height-base: 1.5;
 /* --------------------------
   z-index
 -------------------------- */
-$z-index: menu, header;
+$z-index: brand, menu, header;
 
 /* --------------------------
   color
@@ -30,6 +30,13 @@ $color-link-active: #81817f;
 $header-width: 140px;
 $wrapper-width: 1280px;
 $content-width: 1000px;
+
+/* --------------------------
+  font weight
+-------------------------- */
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-bold: 700;
 
 /* --------------------------
   opacity

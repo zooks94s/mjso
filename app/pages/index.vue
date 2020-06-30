@@ -1,28 +1,38 @@
 <template lang="pug">
-  .container
-    div
-      logo
-      h1.title mjso
-
-      h2.subtitle My supreme Nuxt.js project
-
-      .links
-        a.button--green(
-          href="https://nuxtjs.org/"
-          target="_blank"
-        ) Documentation
-        a.button--grey(
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-        ) GitHub
+  .index-page
+    .index-page_background
+    header.index-page_heading
+      h1.index-page_title 繊細でかけがえのない#[br]お客様の権利を#[br._break-sp]守るために。
+      p.index-page_description 安心して相談できる#[br._break-sp]司法書士として、耳を傾けます。
+      .index-page_scrolling
+        ScrollingArrow
+    article.index-page_article
+      IndexSection(category="ABOUT US")
+        IndexSectionAboutUs
+      IndexSection(category="SERVICE")
+        IndexSectionService
+      IndexSection(category="PRICE")
+        IndexSectionPrice
+      .index-page_bottom
+        ContactButton
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import ScrollingArrow from '@/components/ScrollingArrow'
+import ContactButton from '@/components/ContactButton'
+import IndexSection from '@/components/IndexSection'
+import IndexSectionAboutUs from '@/components/IndexSectionAboutUs'
+import IndexSectionService from '@/components/IndexSectionService'
+import IndexSectionPrice from '@/components/IndexSectionPrice'
 
 export default {
   components: {
-    Logo,
+    ScrollingArrow,
+    ContactButton,
+    IndexSection,
+    IndexSectionAboutUs,
+    IndexSectionService,
+    IndexSectionPrice,
   },
 
   head() {
@@ -49,35 +59,88 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+.index-page {
+  &_background {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(~assets/img/index/bg-visual.svg);
+    background-repeat: no-repeat;
+    background-position: center calc(100% - 136px);
+    background-size: calcRelativeWith($content-width, $wrapper-width);
+  }
+
+  &_article {
+    background-color: $color-white;
+  }
+
+  &_heading {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 190px calcRelativeWith($header-width, $wrapper-width) 60px;
+  }
+
+  &_title {
+    font-size: 4.6rem;
+    font-weight: $weight-medium;
+    font-family: $font-family-serif;
+    @include textTracking(50);
+    line-height: (90 / 46);
+  }
+
+  &_description {
+    font-size: 2rem;
+    font-weight: $weight-medium;
+    font-family: $font-family-serif;
+    @include textTracking(50);
+    margin-top: 50px;
+  }
+
+  &_scrolling {
+    display: none;
+  }
+
+  &_bottom {
+    padding-bottom: 70px;
+  }
 }
 
-.title {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+@media (--sp) {
+  .index-page {
+    &_background {
+      background-position: {
+        x: 105%;
+      }
+      background-size: 138% auto;
+    }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+    &_heading {
+      position: relative;
+      padding: 75px 35px;
+    }
 
-.links {
-  padding-top: 15px;
+    &_title {
+      font-size: 2.5rem;
+    }
+
+    &_description {
+      font-size: 1.6rem;
+    }
+
+    &_scrolling {
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: 20px;
+      left: 0;
+      transform: translateY(-100%);
+    }
+  }
 }
 </style>

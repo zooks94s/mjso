@@ -9,7 +9,7 @@
   &_anchor {
     display: inline-block;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: $weight-bold;
     color: $color-text;
 
     & + & {
@@ -34,9 +34,10 @@
   .call-number {
     &_anchor {
       width: 100%;
+      font-size: 1.8rem;
 
       & + & {
-        margin-top: 12px;
+        margin-top: 5px;
         margin-left: 0;
       }
     }

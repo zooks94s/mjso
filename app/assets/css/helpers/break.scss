@@ -1,0 +1,17 @@
+._break-pc {
+  display: inline !important;
+}
+
+._break-sp {
+  display: none !important;
+}
+
+@media (--sp) {
+  ._break-pc {
+    display: none !important;
+  }
+
+  ._break-sp {
+    display: inline !important;
+  }
+}

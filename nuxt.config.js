@@ -20,12 +20,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&display=swap',
+          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Noto+Serif+JP:400,500,700&display=swap&subset=japanese',
       },
     ],
   },
@@ -40,7 +35,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/svg4everybody.js', ssr: false }],
+  plugins: [
+    { src: '~plugins/svg4everybody.js', ssr: false },
+    { src: '~plugins/object-fit-images.js', ssr: false },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -66,6 +64,7 @@ export default {
             },
           },
         },
+        'postcss-object-fit-images': {},
       },
       preset: {
         autoprefixer: {
