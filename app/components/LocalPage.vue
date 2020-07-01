@@ -18,6 +18,7 @@ export default {
 <style lang="scss" scoped>
 .local-page {
   &_bottom {
+    padding-top: 100px;
     padding-bottom: 70px;
   }
 }

@@ -5,16 +5,24 @@
         category="ABOUT US"
         title="私たちについて"
       )
+      .about-page_body
+        .about-page_section
+          p ご挨拶
+        .about-page_section.-yellow
+          .about-page_inner
+            OfficeOutline
 </template>
 
 <script>
 import LocalPage from '@/components/LocalPage'
 import ContentsTitle from '@/components/ContentsTitle'
+import OfficeOutline from '@/components/OfficeOutline'
 
 export default {
   components: {
     LocalPage,
     ContentsTitle,
+    OfficeOutline,
   },
 
   head() {
@@ -38,3 +46,19 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.about-page {
+  &_section {
+    @include contentWidth;
+  }
+
+  &_section.-yellow {
+    background-color: $color-light-yellow;
+  }
+
+  &_inner {
+    padding: 70px 0;
+  }
+}
+</style>

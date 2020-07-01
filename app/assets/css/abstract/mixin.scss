@@ -22,3 +22,8 @@
     opacity: $opacity-hover;
   }
 }
+
+@mixin contentWidth {
+  padding-right: calcRelativeWith($header-width, $wrapper-width);
+  padding-left: calcRelativeWith($header-width, $wrapper-width);
+}

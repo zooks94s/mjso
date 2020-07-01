@@ -5,7 +5,7 @@ $size-font-base: 1.6rem;
 $font-family-base: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3',
   'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, '游ゴシック', 'Yu Gothic',
   YuGothic, sans-serif;
-$font-family-serif: 'Noto Serif JP';
+$font-family-serif: 'Noto Serif JP', serif;
 $line-height-base: 1.5;
 
 /* --------------------------
@@ -23,6 +23,7 @@ $color-black: #000000;
 $color-magenta: #e73656;
 $color-dark-blue: #001c58;
 $color-link-active: #81817f;
+$color-light-yellow: #fcfbf9;
 
 /* --------------------------
   size
