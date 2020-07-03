@@ -44,11 +44,7 @@ export default {
   }
 
   &_vertical {
-    font-size: 3rem;
-    font-family: $font-family-serif;
-    writing-mode: vertical-rl;
-    line-height: (50 / 30);
-    @include textTracking(60);
+    @include verticalHeading;
     padding: 0 60px;
   }
 

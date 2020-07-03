@@ -57,4 +57,15 @@ export default {
     margin-top: 20px;
   }
 }
+
+@media (--sp) {
+  .section-title {
+    font-size: 1.6rem;
+
+    &::after {
+      width: (150px / 2);
+      margin-top: 15px;
+    }
+  }
+}
 </style>

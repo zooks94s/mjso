@@ -6,9 +6,15 @@
         title="私たちについて"
       )
       .about-page_body
-        .about-page_section
-          p ご挨拶
-        .about-page_section.-yellow
+        section.about-page_section
+          .about-page_inner
+            AboutIntro
+
+        section.about-page_section
+          .about-page_inner
+            AboutMotto
+
+        section.about-page_section.-yellow
           .about-page_inner
             OfficeOutline
 </template>
@@ -17,12 +23,16 @@
 import LocalPage from '@/components/LocalPage'
 import ContentsTitle from '@/components/ContentsTitle'
 import OfficeOutline from '@/components/OfficeOutline'
+import AboutIntro from '@/components/AboutIntro'
+import AboutMotto from '@/components/AboutMotto'
 
 export default {
   components: {
     LocalPage,
     ContentsTitle,
     OfficeOutline,
+    AboutIntro,
+    AboutMotto,
   },
 
   head() {
@@ -51,14 +61,30 @@ export default {
 .about-page {
   &_section {
     @include contentWidth;
+
+    &:not(:first-child) {
+      margin-top: 80px;
+    }
   }
 
   &_section.-yellow {
     background-color: $color-light-yellow;
   }
 
-  &_inner {
+  &_section.-yellow &_inner {
     padding: 70px 0;
+  }
+}
+
+@media (--sp) {
+  .about-page {
+    &_section {
+      @include contentWidthSp;
+    }
+
+    &_section.-yellow &_inner {
+      padding: 40px 0;
+    }
   }
 }
 </style>

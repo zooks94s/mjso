@@ -7,6 +7,18 @@
 .contents-heading {
   height: 50vh;
   min-height: 390px;
-  padding: 140px calcRelativeWith($header-width, $wrapper-width) 110px;
+  @include contentWidth;
+  padding-top: 140px;
+  padding-bottom: 110px;
+}
+
+@media (--sp) {
+  .contents-heading {
+    height: auto;
+    min-height: initial;
+    @include contentWidthSp;
+    padding-top: (112px / 2);
+    padding-bottom: (140px / 2);
+  }
 }
 </style>

@@ -22,4 +22,13 @@ export default {
     padding-bottom: 70px;
   }
 }
+
+@media (--sp) {
+  .local-page {
+    &_bottom {
+      padding-top: 65px;
+      padding-bottom: 45px;
+    }
+  }
+}
 </style>
