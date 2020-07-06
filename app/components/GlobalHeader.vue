@@ -143,6 +143,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     @include z-index(header);
+    background-color: $color-white;
 
     &_scroll,
     &_hamburgertext,
