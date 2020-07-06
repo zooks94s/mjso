@@ -42,4 +42,16 @@ export default {
     @include textTracking(50);
   }
 }
+
+@media (--sp) {
+  .contents-title {
+    &_category {
+      font-size: 1rem;
+    }
+
+    &_text {
+      font-size: 3rem;
+    }
+  }
+}
 </style>

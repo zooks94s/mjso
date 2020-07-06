@@ -22,3 +22,25 @@
     opacity: $opacity-hover;
   }
 }
+
+@mixin contentWidth {
+  padding-right: calcRelativeWith($header-width, $wrapper-width);
+  padding-left: calcRelativeWith($header-width, $wrapper-width);
+}
+
+@mixin contentWidthSp {
+  padding-left: $padding-side-sp;
+  padding-right: $padding-side-sp;
+}
+
+@mixin verticalHeading($font-size: 3, $is-serif: true) {
+  font-size: #{$font-size}rem;
+  font-weight: $weight-bold;
+  writing-mode: vertical-rl;
+  line-height: (50 / 30);
+  @include textTracking(60);
+
+  @if $is-serif == true {
+    font-family: $font-family-serif;
+  }
+}
