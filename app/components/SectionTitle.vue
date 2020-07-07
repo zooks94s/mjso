@@ -3,7 +3,10 @@
     :is="tag"
     :class="centerClass"
   )
-    slot
+    span.section-title_text(v-if="icon")
+      svg-icon.section-title_icon(:name="icon")
+      slot
+    slot(v-else)
 </template>
 
 <script>
@@ -12,6 +15,11 @@ export default {
     level: {
       type: Number,
       required: true,
+    },
+
+    icon: {
+      type: String,
+      default: null,
     },
 
     isCenter: {
@@ -56,6 +64,17 @@ export default {
     background-color: $color-magenta;
     margin-top: 20px;
   }
+
+  &_text {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &_icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
 }
 
 @media (--sp) {
@@ -65,6 +84,11 @@ export default {
     &::after {
       width: (150px / 2);
       margin-top: 15px;
+    }
+
+    &_icon {
+      width: 18px;
+      height: 18px;
     }
   }
 }

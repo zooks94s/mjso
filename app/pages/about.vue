@@ -7,16 +7,13 @@
       )
       .about-page_body
         section.about-page_section
-          .about-page_inner
-            AboutIntro
+          AboutIntro
 
         section.about-page_section
-          .about-page_inner
-            AboutMotto
+          AboutMotto
 
         section.about-page_section.-yellow
-          .about-page_inner
-            OfficeOutline
+          OfficeOutline
 </template>
 
 <script>
@@ -69,10 +66,8 @@ export default {
 
   &_section.-yellow {
     background-color: $color-light-yellow;
-  }
-
-  &_section.-yellow &_inner {
-    padding: 70px 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 }
 
@@ -82,8 +77,9 @@ export default {
       @include contentWidthSp;
     }
 
-    &_section.-yellow &_inner {
-      padding: 40px 0;
+    &_section.-yellow {
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
   }
 }
