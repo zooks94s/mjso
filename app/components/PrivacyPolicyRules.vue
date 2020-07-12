@@ -113,6 +113,10 @@
       padding: 0;
     }
 
+    &_dt {
+      font-size: 1.5rem;
+    }
+
     &_dd {
       padding-left: 0;
     }
