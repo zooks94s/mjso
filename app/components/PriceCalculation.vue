@@ -65,7 +65,7 @@ export default {
 
 @media (--sp) {
   .price-calculation {
-    padding: 10px;
+    padding: 10px 20px;
   }
 }
 </style>

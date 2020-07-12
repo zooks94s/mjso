@@ -225,8 +225,6 @@ export default {
 
     &_total {
       margin-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
     }
 
     &_notice {
