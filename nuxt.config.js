@@ -7,11 +7,17 @@ export default {
     titleTemplate: '%s | 宮川司法書士事務所',
     meta: [
       { charset: 'utf-8' },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || '',
+      },
+      {
+        hid: 'format-detection',
+        name: 'format-detection',
+        content: 'telephone=no',
       },
     ],
     link: [
