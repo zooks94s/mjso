@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@nuxtjs/svg-sprite": "^0.4.10",
+    "gsap": "^3.4.0",
     "nuxt": "^2.11.0",
     "object-fit-images": "^3.2.4",
     "postcss": "^7.0.30",

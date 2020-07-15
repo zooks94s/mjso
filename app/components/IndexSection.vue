@@ -18,7 +18,6 @@ export default {
 <style lang="scss" scoped>
 .index-section {
   position: relative;
-  background-color: $color-white;
 
   &:nth-child(even) {
     background-color: #fcfbf9;

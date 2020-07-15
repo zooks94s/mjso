@@ -60,6 +60,8 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: ['gsap'],
+
     postcss: {
       plugins: {
         'postcss-custom-media': {
