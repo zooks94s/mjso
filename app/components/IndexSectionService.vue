@@ -69,6 +69,14 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .index-section-service {
+    &_contents {
+      padding: 0 $header-width;
+    }
+  }
+}
+
 @media (--sp) {
   .index-section-service {
     padding: 40px $padding-side-sp;

@@ -8,6 +8,7 @@
 <style lang="scss" scoped>
 .contact-button {
   &_link {
+    color: $color-dark-blue;
     text-decoration: none;
     display: flex;
     align-items: center;

@@ -30,6 +30,9 @@ footer.global-footer
 
     .global-footer_copyright
       small Copyright &copy; 宮川司法書士事務所
+
+  .global-footer_scroll
+    ScrollingToTop
 </template>
 
 <script>
@@ -37,6 +40,7 @@ import SlidelineButton from '@/components/SlidelineButton'
 import GlobalContentsNav from '@/components/GlobalContentsNav'
 import SnsButtonFacebook from '@/components/SnsButtonFacebook'
 import CallNumber from '@/components/CallNumber'
+import ScrollingToTop from '@/components/ScrollingToTop'
 
 export default {
   components: {
@@ -44,18 +48,20 @@ export default {
     GlobalContentsNav,
     SnsButtonFacebook,
     CallNumber,
+    ScrollingToTop,
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .global-footer {
+  position: relative;
   background-color: $color-background;
   padding: 60px 0 50px;
 
   &_heading,
   &_body {
-    margin: 0 calcRelativeWith($header-width, $wrapper-width);
+    padding: 0 calcRelativeWith($header-width, $wrapper-width);
   }
 
   &_brand {
@@ -134,6 +140,39 @@ export default {
     display: inline-block;
     text-align: center;
   }
+
+  &_scroll {
+    position: absolute;
+    right: calcRelativeWith($header-width, $wrapper-width);
+    bottom: 50px;
+  }
+}
+
+@media (--narrow) {
+  .global-footer {
+    &_brand {
+      display: block;
+    }
+
+    &_brandauthor {
+      margin-top: 12px;
+      margin-left: 0;
+    }
+
+    &_body {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &_block {
+      &:not(:first-child) {
+        padding-left: 30px;
+      }
+    }
+
+    &_scroll {
+      right: $header-width;
+    }
+  }
 }
 
 @media (--sp) {
@@ -142,7 +181,7 @@ export default {
 
     &_heading,
     &_body {
-      margin: 0;
+      padding: 0;
     }
 
     &_brand {
@@ -190,6 +229,10 @@ export default {
 
     &_copyright {
       margin-top: 0;
+    }
+
+    &_scroll {
+      right: $padding-side-sp;
     }
   }
 }

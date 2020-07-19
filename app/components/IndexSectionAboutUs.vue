@@ -38,13 +38,18 @@ export default {
 
 <style lang="scss" scoped>
 .index-section-about-us {
-  padding: 100px calcRelativeWith($header-width, $wrapper-width);
+  @include contentWidth;
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: flex;
   justify-content: space-between;
 
   &_visual,
   &_content {
-    flex: 1 1 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    max-width: 50%;
   }
 
   &_text {
@@ -58,7 +63,6 @@ export default {
   &_heading {
     width: 100%;
     height: 100%;
-    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,11 +70,7 @@ export default {
   }
 
   &_title {
-    font-size: 3rem;
-    font-family: $font-family-serif;
-    writing-mode: vertical-rl;
-    line-height: (50 / 30);
-    @include textTracking(60);
+    @include verticalHeading();
     padding: 125px;
     background-image: url(~assets/img/index/bg-kv_about_us.png);
     background-position: center center;
@@ -78,19 +78,53 @@ export default {
     background-size: 100% auto;
   }
 
+  &_content {
+    padding-left: 60px;
+  }
+
   &_bottom {
     margin-top: 30px;
   }
 }
 
+@media (--narrow) {
+  .index-section-about-us {
+    @include contentWidthNarrow;
+
+    &_visual,
+    &_content {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    &_visual {
+      flex-basis: 40%;
+      max-width: 40%;
+    }
+
+    &_content {
+      flex-basis: 60%;
+      max-width: 60%;
+    }
+
+    &_title {
+      padding: 100px;
+      font-size: 2.3vw;
+    }
+  }
+}
+
 @media (--sp) {
   .index-section-about-us {
-    padding: 50px $padding-side-sp;
+    @include contentWidthSp;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: block;
 
     &_visual,
     &_content {
       flex: none;
+      max-width: initial;
     }
 
     &_heading {
@@ -100,6 +134,10 @@ export default {
     &_title {
       font-size: 2rem;
       padding: 70px;
+    }
+
+    &_content {
+      padding-left: 0;
     }
 
     &_text {

@@ -84,6 +84,14 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .price-page {
+    &_section {
+      @include contentWidthNarrow;
+    }
+  }
+}
+
 @media (--sp) {
   .price-page {
     &_section {

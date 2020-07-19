@@ -12,6 +12,12 @@
   padding-bottom: 110px;
 }
 
+@media (--narrow) {
+  .contents-heading {
+    @include contentWidthNarrow;
+  }
+}
+
 @media (--sp) {
   .contents-heading {
     height: auto;

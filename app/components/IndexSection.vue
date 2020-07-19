@@ -18,7 +18,6 @@ export default {
 <style lang="scss" scoped>
 .index-section {
   position: relative;
-  background-color: $color-white;
 
   &:nth-child(even) {
     background-color: #fcfbf9;
@@ -26,7 +25,7 @@ export default {
 
   &_category {
     width: 100%;
-    padding: 0 calcRelativeWith($header-width, $wrapper-width);
+    @include contentWidth;
     position: absolute;
     top: 0;
     right: 0;
@@ -38,6 +37,15 @@ export default {
     color: #d8d8d0;
     opacity: 0.5;
     text-align: right;
+  }
+}
+
+@media (--narrow) {
+  .index-section {
+    &_category {
+      @include contentWidthNarrow;
+      font-size: 7.4vw;
+    }
   }
 }
 

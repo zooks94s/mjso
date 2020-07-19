@@ -72,9 +72,9 @@ export default {
   &_vertical {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(50%);
     @include verticalHeading;
-    padding: 40px 50px;
   }
 
   &_image {
@@ -131,6 +131,7 @@ export default {
 
     &_vertical {
       font-size: 2rem;
+      left: auto;
       right: 50%;
       transform: translateX(100%);
       padding: 0;

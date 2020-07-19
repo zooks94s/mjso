@@ -7,11 +7,17 @@ export default {
     titleTemplate: '%s | 宮川司法書士事務所',
     meta: [
       { charset: 'utf-8' },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || '',
+      },
+      {
+        hid: 'format-detection',
+        name: 'format-detection',
+        content: 'telephone=no',
       },
     ],
     link: [
@@ -37,6 +43,7 @@ export default {
   plugins: [
     { src: '~plugins/svg4everybody.js', ssr: false },
     { src: '~plugins/object-fit-images.js', ssr: false },
+    { src: '~plugins/vue-scrollto.js', ssr: false },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -54,11 +61,14 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: ['gsap'],
+
     postcss: {
       plugins: {
         'postcss-custom-media': {
           importFrom: {
             customMedia: {
+              '--narrow': '(min-width: 769px) and (max-width: 1229px)',
               '--sp': 'screen and (max-width: 768px)',
             },
           },
