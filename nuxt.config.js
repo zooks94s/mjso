@@ -43,6 +43,7 @@ export default {
   plugins: [
     { src: '~plugins/svg4everybody.js', ssr: false },
     { src: '~plugins/object-fit-images.js', ssr: false },
+    { src: '~plugins/vue-scrollto.js', ssr: false },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -67,6 +68,7 @@ export default {
         'postcss-custom-media': {
           importFrom: {
             customMedia: {
+              '--narrow': '(min-width: 769px) and (max-width: 1229px)',
               '--sp': 'screen and (max-width: 768px)',
             },
           },

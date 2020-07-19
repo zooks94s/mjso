@@ -131,6 +131,15 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .global-header {
+    &_brand,
+    &_nav {
+      width: 120px;
+    }
+  }
+}
+
 @media (--sp) {
   .global-header {
     width: 100%;

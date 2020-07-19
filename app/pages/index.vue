@@ -4,9 +4,9 @@
     header.index-page_heading
       h1.index-page_title 繊細でかけがえのない#[br]お客様の権利を#[br._break-sp]守るために。
       p.index-page_description 安心して相談できる#[br._break-sp]司法書士として、耳を傾けます。
-      .index-page_scrolling
+      a.index-page_scrolling(href="#" v-scroll-to="'#index-article'")
         ScrollingArrow
-    article.index-page_article
+    article#index-article.index-page_article
       IndexSection(category="ABOUT US")
         IndexSectionAboutUs
       IndexSection(category="SERVICE")
@@ -63,16 +63,14 @@ export default {
 
 <style lang="scss" scoped>
 .index-page {
-  &_article {
-    background-color: $color-white;
-  }
-
   &_heading {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    padding: 190px calcRelativeWith($header-width, $wrapper-width) 60px;
+    @include contentWidth;
+    padding-top: 190px;
+    padding-bottom: 60px;
   }
 
   &_title {
@@ -100,11 +98,21 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .index-page {
+    &_heading {
+      @include contentWidthNarrow;
+    }
+  }
+}
+
 @media (--sp) {
   .index-page {
     &_heading {
       position: relative;
-      padding: 75px 35px;
+      @include contentWidthSp;
+      padding-top: 75px;
+      padding-bottom: 75px;
     }
 
     &_title {
@@ -116,12 +124,12 @@ export default {
     }
 
     &_scrolling {
+      text-decoration: none;
       display: block;
       position: absolute;
       width: 100%;
-      bottom: 20px;
+      top: calc(100% - 20vh);
       left: 0;
-      transform: translateY(-100%);
     }
   }
 }

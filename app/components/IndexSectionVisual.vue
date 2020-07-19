@@ -69,6 +69,23 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .index-section-visual {
+    &_content {
+      padding-left: $header-width;
+    }
+
+    &.-inverse &_content {
+      padding-right: $header-width;
+    }
+
+    &_vertical {
+      font-size: 2.3vw;
+      padding: 0 30px;
+    }
+  }
+}
+
 @media (--sp) {
   .index-section-visual {
     &_inner {

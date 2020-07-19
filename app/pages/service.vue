@@ -71,6 +71,14 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .service-page {
+    &_section {
+      @include contentWidthNarrow;
+    }
+  }
+}
+
 @media (--sp) {
   .service-page {
     &_section {

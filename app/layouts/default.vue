@@ -1,5 +1,5 @@
 <template lang="pug">
-  .app-layout
+  #app.app-layout
     GlobalHeader
     .app-layout_content
       nuxt

@@ -28,7 +28,6 @@ export default {
     fadeAnimation() {
       gsap.to(this.$refs.image, {
         opacity: 0,
-        y: -300,
         duration: 1,
         scrollTrigger: {
           trigger: this.$refs.trigger,
@@ -44,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 .index-main-visual {
   position: relative;
+  z-index: -1;
 
   &_scroller {
     @include contentWidth;
@@ -78,6 +78,10 @@ export default {
     &_container {
       padding-left: 0;
       padding-right: 0;
+    }
+
+    &_image {
+      padding-bottom: 25vh;
     }
   }
 }

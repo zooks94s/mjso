@@ -63,6 +63,15 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .privacy-page {
+    &_summary,
+    &_body {
+      @include contentWidthNarrow;
+    }
+  }
+}
+
 @media (--sp) {
   .privacy-page {
     &_summary {

@@ -11,10 +11,7 @@
     font-size: 2rem;
     font-weight: $weight-bold;
     color: $color-text;
-
-    & + & {
-      margin-left: 20px;
-    }
+    margin-right: 20px;
 
     &::before {
       font-size: 1.4rem;
@@ -35,10 +32,10 @@
     &_anchor {
       width: 100%;
       font-size: 1.8rem;
+      margin-right: 0;
 
       & + & {
         margin-top: 5px;
-        margin-left: 0;
       }
     }
 

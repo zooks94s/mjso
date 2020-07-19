@@ -31,7 +31,8 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-object-fit-images": "^1.1.2",
     "ress": "^2.0.4",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

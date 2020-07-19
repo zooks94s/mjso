@@ -71,6 +71,14 @@ export default {
   }
 }
 
+@media (--narrow) {
+  .about-page {
+    &_section {
+      @include contentWidthNarrow;
+    }
+  }
+}
+
 @media (--sp) {
   .about-page {
     &_section {

@@ -28,6 +28,11 @@
   padding-left: calcRelativeWith($header-width, $wrapper-width);
 }
 
+@mixin contentWidthNarrow {
+  padding-left: $header-width;
+  padding-right: $header-width;
+}
+
 @mixin contentWidthSp {
   padding-left: $padding-side-sp;
   padding-right: $padding-side-sp;
