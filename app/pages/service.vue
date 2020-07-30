@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { siteDomain, ogpMetas } from '@/assets/js/meta-config'
+
 import LocalPage from '@/components/LocalPage'
 import ContentsTitle from '@/components/ContentsTitle'
 import ServicePolicy from '@/components/ServicePolicy'
@@ -32,22 +34,25 @@ export default {
     Serviceflow,
   },
 
-  head() {
+  data() {
     return {
       title: 'サービスについて SERVICE',
+      description: '大切な不動産や相続、会社設立に関することなど、幅広いサービスの概要をご確認いただけます。',
+      keywords: 'サービスについて,業務案内,サービス,service,登記,不動産登記,法人登記,会社設立登記,商業登記,遺産相続,相続,遺言,名義変更,抵当権抹消,相談,司法書士,宮川司法書士事務所',
+    }
+  },
+
+  head() {
+    return {
+      title: this.title,
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            '大切な不動産や相続、会社設立に関することなど、幅広いサービスの概要をご確認いただけます。',
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content:
-            '私たちについて,挨拶,メッセージ,about,登記,不動産登記,法人登記,会社設立登記,商業登記,遺産相続,相続,遺言,名義変更,抵当権抹消,相談,司法書士,宮川司法書士事務所',
-        },
+        { hid: 'description', name: 'description', content: this.description, },
+        { hid: 'keywords', name: 'keywords', content: this.keywords, },
+        { hid: 'og:title', property: 'og:title', content: this.title },
+        { hid: 'og:description', property: 'og:description', content: this.description, },
+        { hid: 'og:url', property: 'og:url', content: siteDomain + this.$route.fullPath },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        ...ogpMetas
       ],
     }
   },

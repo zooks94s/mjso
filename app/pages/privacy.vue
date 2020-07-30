@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { siteDomain, ogpMetas } from '@/assets/js/meta-config'
+
 import LocalPage from '@/components/LocalPage'
 import ContentsTitle from '@/components/ContentsTitle'
 import ParagraphText from '@/components/ParagraphText'
@@ -27,21 +29,25 @@ export default {
     PrivacyPolicyRules,
   },
 
-  head() {
+  data() {
     return {
       title: 'プライバシーポリシー PRIVACY POLICY',
+      description: '宮川司法書士事務所の個人情報保護方針を掲載しています。',
+      keywords: 'プライバシーポリシー,privacypolicy,登記,不動産登記,法人登記,会社設立登記,商業登記,相談,司法書士,宮川司法書士事務所',
+    }
+  },
+
+  head() {
+    return {
+      title: this.title,
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: '宮川司法書士事務所の個人情報保護方針を掲載しています。',
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content:
-            'プライバシーポリシー,privacypolicy,登記,不動産登記,法人登記,会社設立登記,商業登記,相談,司法書士,宮川司法書士事務',
-        },
+        { hid: 'description', name: 'description', content: this.description, },
+        { hid: 'keywords', name: 'keywords', content: this.keywords, },
+        { hid: 'og:title', property: 'og:title', content: this.title },
+        { hid: 'og:description', property: 'og:description', content: this.description, },
+        { hid: 'og:url', property: 'og:url', content: siteDomain + this.$route.fullPath },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        ...ogpMetas
       ],
     }
   },

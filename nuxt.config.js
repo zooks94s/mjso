@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s | 宮川司法書士事務所',
+    titleTemplate: '%s | 宮川司法書士事務所　Miyakawa Judicial Scrivener Office',
     meta: [
       { charset: 'utf-8' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
