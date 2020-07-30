@@ -26,7 +26,6 @@ footer.global-footer
       GlobalContentsNav.global-footer_menu
 
     .global-footer_block.-flex-end
-      SnsButtonFacebook
 
     .global-footer_copyright
       small Copyright &copy; 宮川司法書士事務所
@@ -38,7 +37,6 @@ footer.global-footer
 <script>
 import SlidelineButton from '@/components/SlidelineButton'
 import GlobalContentsNav from '@/components/GlobalContentsNav'
-import SnsButtonFacebook from '@/components/SnsButtonFacebook'
 import CallNumber from '@/components/CallNumber'
 import ScrollingToTop from '@/components/ScrollingToTop'
 
@@ -46,7 +44,6 @@ export default {
   components: {
     SlidelineButton,
     GlobalContentsNav,
-    SnsButtonFacebook,
     CallNumber,
     ScrollingToTop,
   },

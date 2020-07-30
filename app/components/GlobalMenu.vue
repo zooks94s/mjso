@@ -9,8 +9,6 @@
         img(src="@/assets/img/logo-typography_vertical.svg" alt="宮川司法書士事務所")
       .global-menu_nav
         GlobalContentsNav
-      .global-menu_sns
-        SnsButtonFacebook
       .global-menu_telephone
         CallNumber
       .global-menu_contact
@@ -19,14 +17,12 @@
 
 <script>
 import GlobalContentsNav from '@/components/GlobalContentsNav'
-import SnsButtonFacebook from '@/components/SnsButtonFacebook'
 import GlobalMenuContact from '@/components/GlobalMenuContact'
 import CallNumber from '@/components/CallNumber'
 
 export default {
   components: {
     GlobalContentsNav,
-    SnsButtonFacebook,
     GlobalMenuContact,
     CallNumber,
   },
