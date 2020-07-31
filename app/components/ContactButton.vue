@@ -1,9 +1,19 @@
 <template lang="pug">
   .contact-button
-    a.contact-button_link(href="mailto:miyakawa-yusuke@mjso.jp" target="_blank")
+    MailToLink.contact-button_link
       span.contact-button_text CONTACT
       svg-icon.contact-button_icon(name="arrow_forward")
 </template>
+
+<script>
+import MailToLink from '@/components/MailToLink'
+
+export default {
+  components: {
+    MailToLink,
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .contact-button {
@@ -20,10 +30,10 @@
     background-color: $color-white;
     border: 1px solid #aaaaaa;
     transition: border-color $transition-hover;
-  }
 
-  &:hover {
-    border-color: $color-magenta;
+    &:hover {
+      border-color: $color-magenta;
+    }
   }
 
   &_text {
