@@ -1,9 +1,19 @@
 <template lang="pug">
   .global-menu-contact
-    a.global-menu-contact_anchor(href="mailto:user@example.com" target="_blank")
+    MailToLink.global-menu-contact_anchor
       svg-icon.global-menu-contact_icon(name="mail")
       p.global-menu-contact_text CONTACT
 </template>
+
+<script>
+import MailToLink from '@/components/MailToLink'
+
+export default {
+  components: {
+    MailToLink,
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .global-menu-contact {

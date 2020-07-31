@@ -13,7 +13,7 @@
         @click-hamburgar="toggleMenu"
         ref="hamburger"
       )
-      a.global-header_mail(href="mailto:user@example.com" target="_blank")
+      MailToLink.global-header_mail
         svg-icon.global-header_mailicon(name="mail")
     transition(name="menu")
       GlobalMenu.global-header_menu(
@@ -26,12 +26,14 @@
 import ScrollingArrow from '@/components/ScrollingArrow'
 import GlobalMenu from '@/components/GlobalMenu'
 import GlobalHeaderHamburger from '@/components/GlobalHeaderHamburger'
+import MailToLink from '@/components/MailToLink'
 
 export default {
   components: {
     ScrollingArrow,
     GlobalMenu,
     GlobalHeaderHamburger,
+    MailToLink,
   },
 
   data() {
