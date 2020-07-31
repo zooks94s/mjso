@@ -16,7 +16,7 @@ export default {
     openMailer(event) {
       const user = this.user
       const domain = this.domain
-      window.open(`mailto:${user}@${domain}`, '_blank')
+      window.location.href = `mailto:${user}@${domain}`
     }
   }
 }
