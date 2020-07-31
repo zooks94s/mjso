@@ -1,6 +1,6 @@
 <template lang="pug">
   .global-menu-contact
-    a.global-menu-contact_anchor(href="mailto:user@example.com" target="_blank")
+    a.global-menu-contact_anchor(href="mailto:miyakawa-yusuke@mjso.jp" target="_blank")
       svg-icon.global-menu-contact_icon(name="mail")
       p.global-menu-contact_text CONTACT
 </template>

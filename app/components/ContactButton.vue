@@ -1,6 +1,6 @@
 <template lang="pug">
   .contact-button
-    a.contact-button_link(href="mailto:user@example.com" target="_blank")
+    a.contact-button_link(href="mailto:miyakawa-yusuke@mjso.jp" target="_blank")
       span.contact-button_text CONTACT
       svg-icon.contact-button_icon(name="arrow_forward")
 </template>

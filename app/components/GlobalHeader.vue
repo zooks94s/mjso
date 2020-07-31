@@ -13,7 +13,7 @@
         @click-hamburgar="toggleMenu"
         ref="hamburger"
       )
-      a.global-header_mail(href="mailto:user@example.com" target="_blank")
+      a.global-header_mail(href="mailto:miyakawa-yusuke@mjso.jp" target="_blank")
         svg-icon.global-header_mailicon(name="mail")
     transition(name="menu")
       GlobalMenu.global-header_menu(
