@@ -1,5 +1,5 @@
 <template lang="pug">
-SnsButton.sns-button-facebook(name="Facebook" href="https://www.facebook.com/mjso/")
+SnsButton.sns-button-facebook(name="Facebook" href="https://www.facebook.com/mjso.jp/")
 </template>
 
 <script>
