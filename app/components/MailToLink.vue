@@ -1,5 +1,5 @@
 <template lang="pug">
-  a.mail-to-link(@click.self="openMailer")
+  a.mail-to-link(@click="openMailer")
     slot
 </template>
 
